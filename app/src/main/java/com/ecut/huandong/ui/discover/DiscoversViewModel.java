@@ -1,4 +1,4 @@
-package com.ecut.huandong.ui.notifications;
+package com.ecut.huandong.ui.discover;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -7,13 +7,13 @@ import androidx.lifecycle.ViewModel;
 /**
  * @author Cora
  */
-public class NotificationsViewModel extends ViewModel {
+public class DiscoversViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public DiscoversViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is discovery fragment");
     }
 
     public LiveData<String> getText() {

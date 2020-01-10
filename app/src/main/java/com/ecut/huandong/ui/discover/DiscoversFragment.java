@@ -1,4 +1,4 @@
-package com.ecut.huandong.ui.notifications;
+package com.ecut.huandong.ui.discover;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,18 +17,18 @@ import com.ecut.huandong.R;
 /**
  * @author Cora
  */
-public class NotificationsFragment extends Fragment {
+public class DiscoversFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private DiscoversViewModel discoversViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+        discoversViewModel =
+                ViewModelProviders.of(this).get(DiscoversViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_discovers, container, false);
+        final TextView textView = root.findViewById(R.id.text_discover);
+        discoversViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

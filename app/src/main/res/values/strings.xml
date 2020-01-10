@@ -1,8 +1,23 @@
 <resources>
     <string name="app_name">焕动</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_sport">sport</string>
-    <string name="title_community">community</string>
+    <string name="title_home">我的</string>
+    <string name="title_dashboard">打卡</string>
+    <string name="title_discover">发现</string>
+    <string name="title_sport">运动</string>
+    <string name="title_community">社区</string>
+    <string name="user_icon">user_icon</string>
+    <string name="text_follow">关注</string>
+    <string name="text_fans">粉丝</string>
+    <string name="text_name">Taylor</string>
+    <string name="shopping_item">shopping_item</string>
+    <string name="shopping_car">购物车</string>
+    <string name="shopping_list">订单</string>
+    <string name="shopping_ticket">优惠券</string>
+    <string name="shopping_address">收获地址</string>
+    <string name="shopping_wallet">我的钱包</string>
+    <string name="shopping_account">我的会员</string>
+    <string name="shopping_server">我的客服</string>
+    <string name="shopping_setting">设置</string>
+
+
 </resources>
