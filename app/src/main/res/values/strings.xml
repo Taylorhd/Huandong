@@ -18,6 +18,19 @@
     <string name="shopping_account">我的会员</string>
     <string name="shopping_server">我的客服</string>
     <string name="shopping_setting">设置</string>
+    <string name="membership_reward_points">积分兑换</string>
+    <string name="collection">我的收藏</string>
+    <string name="course">我的课程</string>
+    <string name="body_report">身体报告</string>
+    <string name="menu_item_message">私信</string>
+
+    <string-array name="indicator_title">
+        <item>关注</item>
+        <item>推文</item>
+        <item>咨询</item>
+        <item>最新文章</item>
+        <item>运动商城</item>
+    </string-array>
 
 
 </resources>

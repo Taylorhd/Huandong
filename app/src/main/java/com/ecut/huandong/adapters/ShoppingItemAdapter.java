@@ -1,4 +1,4 @@
-package com.ecut.huandong;
+package com.ecut.huandong.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ecut.huandong.R;
+import com.ecut.huandong.ShoppingItem;
+
 import java.util.List;
 
-public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapter.ViewHolder>{
+public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapter.ViewHolder> {
     private List<ShoppingItem> mShoppingItemList;
 
-//    static class ViewHolder extends RecyclerView.ViewHolder{
+    //    static class ViewHolder extends RecyclerView.ViewHolder{
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView shoppingItemImage;
         TextView shoppingItemName;
@@ -27,19 +30,18 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
         }
 
     }
+
     public ShoppingItemAdapter(List<ShoppingItem> mShoppingItemList) {
         this.mShoppingItemList = mShoppingItemList;
     }
 
 
-
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.shopping_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.shopping_item, parent, false);
         ViewHolder holder = new ViewHolder(view);
-        return  holder;
+        return holder;
     }
 
     @Override
@@ -49,7 +51,6 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
         holder.shoppingItemImage.setImageResource(shoppingItem.getItemImage());
 
     }
-
 
 
     @Override

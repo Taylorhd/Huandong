@@ -2,8 +2,10 @@ package com.ecut.huandong.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -13,15 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ecut.huandong.MainActivity;
 import com.ecut.huandong.R;
 import com.ecut.huandong.ShoppingItem;
-import com.ecut.huandong.ShoppingItemAdapter;
+import com.ecut.huandong.adapters.ShoppingItemAdapter;
 import com.ecut.huandong.TestActivity;
 
 import java.util.ArrayList;
@@ -36,11 +36,10 @@ public class HomeFragment extends Fragment {
     private List<ShoppingItem> shoppingItems = new ArrayList<>();
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        CardView cardView = (CardView)root.findViewById(R.id.cardViewInfo);
-        TextView tv = (TextView)root.findViewById(R.id.text_follow);
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        CardView cardView = (CardView)getView().findViewById(R.id.cardViewInfo);
+        TextView tv = (TextView)getView().findViewById(R.id.text_follow);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,8 +48,12 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+
+
+        //  实现recycle view ，
         initShopItem();
-        RecyclerView  recyclerView = (RecyclerView) root.findViewById(R.id.recycle_view);
+        RecyclerView  recyclerView = (RecyclerView) getView().findViewById(R.id.recycle_view);
         recyclerView.setNestedScrollingEnabled(false);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
@@ -58,7 +61,58 @@ public class HomeFragment extends Fragment {
         ShoppingItemAdapter adapter = new ShoppingItemAdapter(shoppingItems);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
+        setHasOptionsMenu(true);        // 私信menu
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+//        CardView cardView = (CardView)root.findViewById(R.id.cardViewInfo);
+//        TextView tv = (TextView)root.findViewById(R.id.text_follow);
+//        tv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(),TestActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//
+//
+//
+//        //  实现recycle view ，
+//        initShopItem();
+//        RecyclerView  recyclerView = (RecyclerView) root.findViewById(R.id.recycle_view);
+//        recyclerView.setNestedScrollingEnabled(false);
+//
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
+//        recyclerView.setLayoutManager(layoutManager);
+//        ShoppingItemAdapter adapter = new ShoppingItemAdapter(shoppingItems);
+//        recyclerView.setAdapter(adapter);
+
         return root;
+    }
+
+    // 实现 响应点击菜单事件
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_item_message:
+                Toast.makeText(this.getActivity(),"message test",Toast.LENGTH_SHORT).show();
+                return true;
+                default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    // 实现私信menu
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_home_message,menu);
+
     }
 
     private void initShopItem() {
