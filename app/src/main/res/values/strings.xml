@@ -23,6 +23,14 @@
     <string name="course">我的课程</string>
     <string name="body_report">身体报告</string>
     <string name="menu_item_message">私信</string>
+    <string name="shared_weighing_machine">共享称</string>
+    <string name="textView_bonus_pool">奖金池</string>
+    <string name="textView_group">群组</string>
+    <string name="textView_advertising">TextView</string>
+    <string name="button_weight_sign">体重打卡</string>
+    <string name="textview_donation">公益捐</string>
+    <string name="text_view_benefit">减重福利</string>
+    <string name="textView_sport">运动赛事</string>
 
     <string-array name="indicator_title">
         <item>关注</item>

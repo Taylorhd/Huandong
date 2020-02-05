@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ecut.huandong.R;
 import com.ecut.huandong.ShoppingItem;
 import com.ecut.huandong.adapters.ShoppingItemAdapter;
-import com.ecut.huandong.TestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,16 +39,6 @@ public class HomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         CardView cardView = (CardView)getView().findViewById(R.id.cardViewInfo);
         TextView tv = (TextView)getView().findViewById(R.id.text_follow);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),TestActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-
 
         //  实现recycle view ，
         initShopItem();
@@ -68,28 +57,7 @@ public class HomeFragment extends Fragment {
         setHasOptionsMenu(true);        // 私信menu
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-//        CardView cardView = (CardView)root.findViewById(R.id.cardViewInfo);
-//        TextView tv = (TextView)root.findViewById(R.id.text_follow);
-//        tv.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(),TestActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
-//
-//
-//
-//        //  实现recycle view ，
-//        initShopItem();
-//        RecyclerView  recyclerView = (RecyclerView) root.findViewById(R.id.recycle_view);
-//        recyclerView.setNestedScrollingEnabled(false);
-//
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
-//        recyclerView.setLayoutManager(layoutManager);
-//        ShoppingItemAdapter adapter = new ShoppingItemAdapter(shoppingItems);
-//        recyclerView.setAdapter(adapter);
+
 
         return root;
     }
