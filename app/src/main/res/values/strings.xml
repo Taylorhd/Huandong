@@ -40,6 +40,13 @@
         <item>运动商城</item>
     </string-array>
 
+    <string name="text_72hour_hot_articles">| 72小时热门文章 > </string>
+    <string name="hot">热门</string>
+    <string name="recommand">推荐</string>
+    <string name="refresh">换一换</string>
+    <string name="guess_you_like">猜你喜欢</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
